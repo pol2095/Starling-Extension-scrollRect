@@ -17,12 +17,18 @@ package starling.extensions.display
 			super();
 		}
 		
+		/**
+		 * @private
+		 */
 		override public function get width():Number
 		{
 			if( ! this.mask ) return measure( this, false ).width;
 			return this.mask.width;
 		}
 		
+		/**
+		 * @private
+		 */
 		override public function get height():Number
 		{
 			if( ! this.mask ) return measure( this, false ).height;
