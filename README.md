@@ -6,8 +6,8 @@ The scroll rectangle bounds of the display object. The display object is cropped
 ## Quick Links
 
 * [Website](http://pol2095.free.fr/Starling-Feathers-Extensions/)
+* [API Reference](http://pol2095.free.fr/Starling-Feathers-Extensions/docs/starling/extensions/display/SpriteMask.html)
 * [Discussion Forum](http://forum.starling-framework.org/)
-* [Discussion Forum](http://forum.starling-framework.org/forum/)
 * [Github Project](https://github.com/pol2095/Starling-Extension-scrollRect)
 
 ## Minimum Requirements
