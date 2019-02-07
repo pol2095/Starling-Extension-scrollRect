@@ -22,7 +22,7 @@ package starling.extensions.display
 		 */
 		override public function get width():Number
 		{
-			if( ! this.mask ) return measure( this, false ).width;
+			if( ! this.mask ) return measure( this ).width;
 			return this.mask.width;
 		}
 		
@@ -31,7 +31,7 @@ package starling.extensions.display
 		 */
 		override public function get height():Number
 		{
-			if( ! this.mask ) return measure( this, false ).height;
+			if( ! this.mask ) return measure( this ).height;
 			return this.mask.height;
 		}
 		
@@ -40,7 +40,7 @@ package starling.extensions.display
 		 */
 		public function get contentWidth():Number
 		{
-			return measure( this, true ).width;
+			return measure( this ).width;
 		}
 		
 		/**
@@ -48,12 +48,12 @@ package starling.extensions.display
 		 */
 		public function get contentHeight():Number
 		{
-			return measure( this, true ).height;
+			return measure( this ).height;
 		}
 		
 		private var rect:Rectangle;
 		
-		private function measure(container:DisplayObjectContainer, content:Boolean):Rectangle
+		private function measure(container:DisplayObjectContainer):Rectangle
 		{
 			if( container == this ) this.rect = new Rectangle();
 			if( container.numChildren == 0 ) return this.rect;
@@ -63,8 +63,8 @@ package starling.extensions.display
 				var rect:Rectangle = getRect( displayObject );
 				this.rect = this.rect.union( rect );
 				if( ! ( displayObject as DisplayObjectContainer ) ) continue; // is a Quad
-				if( displayObject.mask && ! content ) continue;
-				measure( displayObject as DisplayObjectContainer, false );
+				if( displayObject.mask ) continue;
+				measure( displayObject as DisplayObjectContainer );
 			}
 			return this.rect;
 		}
