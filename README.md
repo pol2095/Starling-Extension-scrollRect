@@ -1,4 +1,4 @@
-# Starling Extension scrollRect 1.0.0
+# Starling Extension scrollRect 1.0.1
 
 This project adds a scrollRect method to Starling Framework like Apache Flex. Starling Framework offering blazing fast GPU powered graphics to create a smooth and responsive experience. Build completely standalone, native applications on iOS, Android, Windows, and Mac OS X, or target Adobe Flash Player in desktop browsers.<br />
 The scroll rectangle bounds of the display object. The display object is cropped to the size defined by the rectangle, and it scrolls within the rectangle when you change the x and y properties.
