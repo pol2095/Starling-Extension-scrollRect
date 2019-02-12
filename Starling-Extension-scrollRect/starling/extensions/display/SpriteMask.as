@@ -66,6 +66,11 @@ package starling.extensions.display
 				if( displayObject.mask ) continue;
 				measure( displayObject as DisplayObjectContainer );
 			}
+			if( container == this )
+			{
+				this.rect.width *= this.scaleX;
+				this.rect.height *= this.scaleY;
+			}
 			return this.rect;
 		}
 		
@@ -74,13 +79,12 @@ package starling.extensions.display
 			var rect:Rectangle= new Rectangle();
 			var point:Point = new Point( displayObject.x, displayObject.y );
 			point = displayObject.parent.localToGlobal( point );
-			if( ! parent ) throw new Error("The SpriteMask must be added to the stage.");
-			point = parent.globalToLocal( point );
+			point = this.globalToLocal( point );
 			rect.x = point.x;
 			rect.y = point.y;
 			point = new Point( displayObject.x + displayObject.width, displayObject.y + displayObject.height );
 			point = displayObject.parent.localToGlobal( point );
-			point = parent.globalToLocal( point );
+			point = this.globalToLocal( point );
 			rect.width = point.x - rect.x;
 			rect.height = point.y - rect.y;
 			return rect;
