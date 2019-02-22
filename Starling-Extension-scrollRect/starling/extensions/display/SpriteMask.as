@@ -62,7 +62,7 @@ package starling.extensions.display
 				var displayObject:DisplayObject = container.getChildAt(i);
 				var rect:Rectangle = getRect( displayObject );
 				this.rect = this.rect.union( rect );
-				if( ! ( displayObject as DisplayObjectContainer ) ) continue; // is a Quad
+				if( ! ( displayObject is DisplayObjectContainer ) ) continue; // is a Quad
 				if( displayObject.mask ) continue;
 				measure( displayObject as DisplayObjectContainer );
 			}
